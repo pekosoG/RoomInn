@@ -10,3 +10,10 @@ The content is divided in the following order:
 2. __web/__ : Web Client files
 3. __android/__ : Android Client files
 4. __doc/__ : Documentation of the whole project
+
+
+How to Contribute:
+- Request Collaboration Access
+- Assign an Open Issue to yourself
+- Create a branch using <issue_number>_<issue_name>
+- Create a Pull Request to Develop
