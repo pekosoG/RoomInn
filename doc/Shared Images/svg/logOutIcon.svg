@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="House" transform="translate(-10.000000, -330.000000)" stroke="#FFFFFF" stroke-width="2">
+            <g id="side" transform="translate(-3.000000, 0.000000)">
+                <g id="Group-9" transform="translate(23.178571, 340.500000) rotate(90.000000) translate(-23.178571, -340.500000) translate(13.678571, 330.321429)">
+                    <path d="M9.5,13.9288508 L9.5,0.366269324" id="Stroke-345"></path>
+                    <path d="M12.2142857,3.07878562 L9.5,0.366269324" id="Stroke-346"></path>
+                    <path d="M9.5,0.366269324 L6.78571429,3.07878562" id="Stroke-347"></path>
+                    <path d="M17.6428571,4.43504377 C18.3933571,4.43504377 19,5.04129116 19,5.79130192 L19,17.9976253 C19,18.747636 18.3933571,19.3538834 17.6428571,19.3538834 L1.35714286,19.3538834 C0.606642857,19.3538834 0,18.747636 0,17.9976253 L0,5.79130192 C0,5.04129116 0.606642857,4.43504377 1.35714286,4.43504377" id="Stroke-348"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
