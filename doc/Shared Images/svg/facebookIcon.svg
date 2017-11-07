@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Intro-Logger" transform="translate(-680.000000, -696.000000)" fill="#FFFFFF">
+            <path d="M694.8956,696 C686.6822,696 680,702.6822 680,710.8956 C680,719.1084 686.6822,725.7912 694.8956,725.7912 C703.1084,725.7912 709.7912,719.1084 709.7912,710.8956 C709.7912,702.6822 703.1096,696 694.8956,696 Z M698.6,711.42 L696.1766,711.42 L696.1766,720.0576 L692.5856,720.0576 L692.5856,711.42 L690.8786,711.42 L690.8786,708.3672 L692.5856,708.3672 L692.5856,706.3926 C692.5856,704.9784 693.2576,702.7686 696.2096,702.7686 L698.8706,702.7788 L698.8706,705.7422 L696.9392,705.7422 C696.6248,705.7422 696.1778,705.8994 696.1778,706.5738 L696.1778,708.3678 L698.9138,708.3678 L698.6,711.42 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

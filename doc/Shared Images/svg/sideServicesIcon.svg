@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="House" transform="translate(-10.000000, -245.000000)">
+            <g id="side" transform="translate(-3.000000, 0.000000)">
+                <g id="Group-2" transform="translate(14.000000, 246.000000)">
+                    <path d="M17.6428571,18.9876141 L1.35714286,18.9876141 C0.606642857,18.9876141 0,18.3800104 0,17.6313559 L0,6.78129074 C0,6.03263625 0.606642857,5.42503259 1.35714286,5.42503259 L17.6428571,5.42503259 C18.3933571,5.42503259 19,6.03263625 19,6.78129074 L19,17.6313559 C19,18.3800104 18.3933571,18.9876141 17.6428571,18.9876141 Z" id="Stroke-132" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M16.2857143,12.2063233 C16.2857143,12.9549778 15.6790714,13.5625815 14.9285714,13.5625815 C14.1780714,13.5625815 13.5714286,12.9549778 13.5714286,12.2063233 C13.5714286,11.4576688 14.1780714,10.8500652 14.9285714,10.8500652 C15.6790714,10.8500652 16.2857143,11.4576688 16.2857143,12.2063233" id="Fill-133" fill="#FFFFFF"></path>
+                    <polyline id="Stroke-134" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="14.9285714 5.42503259 14.9285714 0 1.35714286 5.42503259"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
