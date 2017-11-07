@@ -21,6 +21,7 @@ _Roomie_
 - Phone
 - Photo
 - House id
+- Password
 - Register Date
 - Update Date
 
