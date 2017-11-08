@@ -34,3 +34,9 @@ _Service_
 - House id
 - Register Date
 - Update Date
+
+_Invite_
+- Email
+- House id
+- Register Date
+- Update Date

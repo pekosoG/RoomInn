@@ -14,4 +14,34 @@ router.get('/',function(req, res, next){
     });
 });
 
+router.post('/',function(req, res, next){
+    let params = req.parameters;
+    let houseParams = params.require('house').permit('name','address','photo','owner').value();
+    models.Roomie.findOne({where:{id:houseParams.owner}}).then(function(resp){
+        if(!resp){res.status(400).send({error:'Owner Not Found'})}
+        models.House.create(houseParams).then(function(resp){
+            res.status(201).send({house:resp});
+        }).catch(function(err){
+            res.status(400).send({err:err.message});
+        });
+    }).catch(function(err){
+        res.status(400).send({err:err.message});
+    });    
+});
+
+router.put('/:id',function(req, res, next){
+    let params = req.parameters;
+    let house = params.require('house').permit('name','address','photo','owner').value();
+    let houseId=req.params.id;
+
+    models.House.findOne({where:{id:houseId}}).then(function(house){
+        if(!house){ res.status(404).send({error:'House not found'})}
+        models.House.update(house,{where:{id:houseId}}).then(function(updatedHouse){
+            res.status(201).send({roomie:updatedHouse});
+        }).catch(function(err){
+            res.status(400).send({err:err.message});
+        });
+    });
+});
+
 module.exports = router;

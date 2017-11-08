@@ -39,4 +39,17 @@ router.put('/:id',function(req, res, next){
     });
 });
 
+router.post('/invite',function(req, res, next){
+    let params = req.parameters;
+    let inviteData = params.require('invite').permit('email','house_id').value();
+    models.House.findOne({where:{id:inviteData.house_id}}).then(function(house){
+        if(!house){ res.status(404).send({error:'House not found'})} 
+        models.Invite.create(inviteData).then(function(invited){
+            res.status(201).send({invited:invited});
+        });
+    }).catch(function(err){
+        res.status(400).send({err:err.message});
+    });
+});
+
 module.exports = router;
