@@ -1,7 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-
 body{
   color: #FFF;
+}
+
+.title{
+  font-family: Helvetica;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 2.25px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 32px 0;
 }
 
 .urls{
@@ -58,4 +67,11 @@ color: #FFFFFF;
 
 .social-icon:hover{
   opacity: 0.70;
+}
+
+.custom-nav{
+  height: 80px;
+  border-radius: 0;
+  color: #FFF;
+  background-image: linear-gradient(-45deg, #4CA1AF 0%, #009688 100%);
 }
