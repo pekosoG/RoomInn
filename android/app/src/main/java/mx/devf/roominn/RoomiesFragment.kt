@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -13,20 +12,21 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import mx.devf.roominn.Adapters.RoomiesAdapter
 import mx.devf.roominn.Adapters.ServicesAdapter
 
 /**
  * Created by Luis Rios on 07/11/2017.
  */
-class ServicesFragment : Fragment()
+class RoomiesFragment : Fragment()
 {
     companion object {
         //val ARG_HOUSE = "ARG_HOUSE"
 
         //fun newIntances (houseId : String) : ServicesFragment
-        fun newIntances () : ServicesFragment
+        fun newIntances () : RoomiesFragment
         {
-            val fragment = ServicesFragment()
+            val fragment = RoomiesFragment()
             val args = Bundle()
             //args.putString(ARG_HOUSE, houseId)
             fragment.arguments = args
@@ -35,15 +35,15 @@ class ServicesFragment : Fragment()
     }
 
     protected var mRecyclerView: RecyclerView? = null
-    protected var mAdapter: ServicesAdapter? = null
+    protected var mAdapter: RoomiesAdapter? = null
     protected var mLayoutManager: RecyclerView.LayoutManager? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater!!.inflate(R.layout.fragment_services, container, false)
+        val view = inflater!!.inflate(R.layout.fragment_roomies, container, false)
 
         mRecyclerView = view?.findViewById(R.id.recyclerView)
         mLayoutManager = LinearLayoutManager(activity)
-        mAdapter = ServicesAdapter()
+        mAdapter = RoomiesAdapter()
 
         mRecyclerView?.layoutManager = mLayoutManager
         mRecyclerView?.adapter = mAdapter
@@ -52,7 +52,6 @@ class ServicesFragment : Fragment()
 
         return view
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -60,6 +59,4 @@ class ServicesFragment : Fragment()
     override fun onAttach(context: Context?) {
         super.onAttach(context)
     }
-
-
 }
