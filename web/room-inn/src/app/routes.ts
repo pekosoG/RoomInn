@@ -1,10 +1,7 @@
 import { Routes } from '@angular/router'
-// import { SignUp }
+import { LogInComponent } from './log-in/log-in.component'
 
-
-// export const appRoutes:Routes = [
-
-//   { path: 'events', component: EventListComponent},
-//   { path: '', redirectTo: '/events', pathMatch: 'full' },
-
-// ]
+export const appRoutes: Routes = [
+  { path: 'login', component: LogInComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full'}
+]
