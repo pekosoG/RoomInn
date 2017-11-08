@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:grid="http://schemas.android.com/tools"
+    android:padding="16dp">
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/service_name"
+                />
+
+            <EditText
+                android:id="@+id/editServiceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/service_name"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:background="@color/colorDivider"
+                    grid:alignmentMode="alignBounds"
+                    grid:columnCount="3"
+                    grid:rowOrderPreserved="false"
+                    grid:useDefaultMargins="true">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableRight="@drawable/ic_servicerent"
+                        android:checked="true"
+                        grid:layout_rowWeight="1"
+                        grid:layout_columnWeight="1"
+                        grid:layout_gravity="center" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableRight="@drawable/ic_serviceelectricity"
+                        grid:layout_columnWeight="1"
+                        grid:layout_rowWeight="1"
+                        grid:layout_gravity="center" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableRight="@drawable/ic_serviceinternet"
+                        grid:layout_rowWeight="1"
+                        grid:layout_columnWeight="1"
+                        grid:layout_gravity="center" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableRight="@drawable/ic_servicephone"
+                        grid:layout_rowWeight="1"
+                        grid:layout_columnWeight="1"
+                        grid:layout_gravity="center" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableRight="@drawable/ic_servicecable"
+                        grid:layout_rowWeight="1"
+                        grid:layout_columnWeight="1"
+                        grid:layout_gravity="center" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableRight="@drawable/ic_servicewater"
+                        grid:layout_rowWeight="1"
+                        grid:layout_columnWeight="1"
+                        grid:layout_gravity="center" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableRight="@drawable/ic_servicegas"
+                        grid:layout_rowWeight="1"
+                        grid:layout_columnWeight="1"
+                        grid:layout_gravity="center" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableRight="@drawable/ic_servicecleaning"
+                        grid:layout_rowWeight="1"
+                        grid:layout_columnWeight="1"
+                        grid:layout_gravity="center" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableRight="@drawable/ic_serviceothers"
+                        grid:layout_rowWeight="1"
+                        grid:layout_columnWeight="1"
+                        grid:layout_gravity="center" />
+
+                </GridLayout>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/service_name"
+                />
+
+            <EditText
+                android:id="@+id/editCost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/service_name"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/editPaymentDur"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/of_the_month"
+                    />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="4dp"
+                android:paddingEnd="4dp"
+                android:layout_gravity="end"
+                android:text="@string/save"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorIcons"
+                />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>
