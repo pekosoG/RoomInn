@@ -14,8 +14,9 @@
         android:supportsRtl="true"
         android:description="@string/app_description"
         android:theme="@style/AppTheme">
+        <!--android:name=".LoginActivity"-->
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             >

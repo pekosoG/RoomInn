@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/cardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/txtTotalMine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$456.94/"
+                android:textColor="@color/colorIcons"
+                android:textSize="48dp" />
+
+            <TextView
+                android:id="@+id/txtTotalAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$2650.00"
+                android:textColor="@color/colorIcons"
+                android:textSize="24dp" />
+        </LinearLayout>
+
+        <Switch
+
+            android:id="@+id/switchAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:selectAllOnFocus="false"
+            android:text="All "
+            android:checked="true"
+            android:textColor="@color/colorIcons"
+            android:textSize="18dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="16dp"
+            />
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_below="@+id/cardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+    <!-- cordinate android:layout_gravity="bottom|end" -->
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:tint="@color/colorIcons"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/colorIcons"
+        app:srcCompat="@android:drawable/ic_input_add" />
+</RelativeLayout>
