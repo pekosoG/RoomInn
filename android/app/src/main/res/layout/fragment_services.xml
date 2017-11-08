@@ -45,6 +45,7 @@
             android:layout_alignParentEnd="true"
             android:selectAllOnFocus="false"
             android:text="All "
+            android:checked="true"
             android:textColor="@color/colorIcons"
             android:textSize="18dp"
             android:layout_marginRight="6dp"
