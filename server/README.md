@@ -16,12 +16,12 @@ _House_
 
 ```
 {
-	"house":{
+"house":{
       "name":"Hood ",
       "address":"Callle 3589",
       "photo":"Photo.jpg",
       "owner":1
-	}
+}
 }
 ```
 
@@ -38,12 +38,12 @@ _Roomie_
 
 ```
 {
-	"roomie":{
+"roomie":{
       "name":"Someone",
       "email":"someone@hotmail.com",
       "phone":"33333333",
       "photo":"profile.jpg"
-	}
+}
 }
 ```
 
