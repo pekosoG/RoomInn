@@ -69,8 +69,8 @@ But first, these are the Current Endpoints:
 
 - __/v1/roomie__:
 ```JSON
-[GET] [JWT REQUIRED]
-[RESPONSE]: 200 OK
+GET [JWT REQUIRED]
+RESPONSE: 200 OK
 [
     {
         "id": 1,
@@ -87,7 +87,7 @@ But first, these are the Current Endpoints:
     }
 ]
 
-[POST] [JWT NOT REQUIRED]
+POST [JWT NOT REQUIRED]
 {
 "roomie":{
       "name":"User",
@@ -97,7 +97,7 @@ But first, these are the Current Endpoints:
       "password":"12345"
     }
 }
-[RESPONSE]: 200 OK
+RESPONSE: 200 OK
 {
     "roomie": {
         "id": 1,
@@ -111,7 +111,7 @@ But first, these are the Current Endpoints:
     }
 }
 
-[PUT] [JWT REQUIRED]
+PUT [JWT REQUIRED]
 {
 "roomie":{
       "name":"User",
@@ -121,7 +121,7 @@ But first, these are the Current Endpoints:
       "password":"12345"
     }
 }
-[RESPONSE]: 200 OK
+RESPONSE: 200 OK
 {
     "roomie": {
         "id": 1,
@@ -138,8 +138,8 @@ But first, these are the Current Endpoints:
 
 - __/v1/house__ : 
 ```JSON
-[GET] [JWT REQUIRED]
-[RESPONSE]: 200 OK
+GET [JWT REQUIRED]
+RESPONSE: 200 OK
 [
     {
         "name":"Hood ",
@@ -151,7 +151,7 @@ But first, these are the Current Endpoints:
     }
 ]
 
-[POST][JWT REQUIRED]
+POST [JWT REQUIRED]
 {
 "house":{
       "name":"Hood ",
@@ -160,7 +160,7 @@ But first, these are the Current Endpoints:
       "owner":1
       }
 }
-[RESPONSE]: 200 OK
+RESPONSE: 200 OK
 {
   "house":{
       "name":"Hood ",
@@ -172,7 +172,7 @@ But first, these are the Current Endpoints:
       }
 }
 
-[PUT][JWT REQUIRED]
+PUT [JWT REQUIRED]
 {
 "house":{
       "name":"Hood ",
@@ -181,7 +181,7 @@ But first, these are the Current Endpoints:
       "owner":1
       }
 }
-[RESPONSE]: 200 OK
+RESPONSE: 200 OK
 {
   "house":{
       "name":"Hood ",
@@ -196,8 +196,8 @@ But first, these are the Current Endpoints:
 
 - __/v1/service__ : 
 ```JSON
-[GET] [JWT REQUIRED]
-[RESPONSE]: 200 OK
+GET [JWT REQUIRED]
+RESPONSE: 200 OK
 [
     {
         "name":"Internet",
@@ -210,7 +210,7 @@ But first, these are the Current Endpoints:
     }
 ]
 
-[POST][JWT REQUIRED]
+POST [JWT REQUIRED]
 {
 "service":{
       "name":"Internet",
@@ -220,7 +220,7 @@ But first, these are the Current Endpoints:
       "house_id":1,
       }
 }
-[RESPONSE]: 200 OK
+RESPONSE: 200 OK
 {
   "service":{
      "name":"Internet",
@@ -233,7 +233,7 @@ But first, these are the Current Endpoints:
       }
 }
 
-[PUT][JWT REQUIRED]
+PUT [JWT REQUIRED]
 {
 "service":{
       "name":"Internet",
@@ -243,7 +243,7 @@ But first, these are the Current Endpoints:
       "house_id":1,
       }
 }
-[RESPONSE]: 200 OK
+RESPONSE: 200 OK
 {
   "service":{
       "name":"Internet",
@@ -260,7 +260,7 @@ But first, these are the Current Endpoints:
 For Authentication, we are __using JTW__. That means that __you need to get a token__ in order to consume our Endpoints.
 - __/v1/auth__ : 
 ```JSON
-[POST]
+POST
 {
 "roomie":{
       "email":"user@hotmail.com",
@@ -268,7 +268,7 @@ For Authentication, we are __using JTW__. That means that __you need to get a to
       }
 }
 
-[RESPONSE]: 200 OK
+RESPONSE: 200 OK
 {
  "status": true,
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlzcmFlbF9nYWhlQGhvdG1haWwuY29tIiwiaWQiOjEsImlhdCI6MTUxMDEyNTk3NSwiZXhwIjoxNTEwMTI3NDE1fQ.rj5tVWE52luoFvVItQqiVD19VwH7NuJ1fnq42_ddZq0"
@@ -276,4 +276,4 @@ For Authentication, we are __using JTW__. That means that __you need to get a to
 ```
 After this, you need to send the token at the body or as a query variable or even as a header with the __x-access-token__ key.
 
-All the Endpoints with __JWT REQUIRED__ will return _STATUS __402 FORBBIDEN__ _ if the token is missing.
+All the Endpoints with __JWT REQUIRED__ will return __STATUS 402 FORBBIDEN__  if the token is missing.
