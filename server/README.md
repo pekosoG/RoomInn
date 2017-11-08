@@ -14,6 +14,17 @@ _House_
 - Register Date
 - Update Date
 
+```
+{
+	"house":{
+      "name":"Hood ",
+      "address":"Callle 3589",
+      "photo":"Photo.jpg",
+      "owner":1
+	}
+}
+```
+
 _Roomie_
 - id
 - Name
@@ -24,6 +35,17 @@ _Roomie_
 - Password
 - Register Date
 - Update Date
+
+```
+{
+	"roomie":{
+      "name":"Someone",
+      "email":"someone@hotmail.com",
+      "phone":"33333333",
+      "photo":"profile.jpg"
+	}
+}
+```
 
 _Service_
 - id
