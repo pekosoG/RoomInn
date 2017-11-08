@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "heroku":"git subtree push --prefix server/room-inn heroku master",
-    "heroku2":"git push heroku master",
+    "heroku": "git subtree push --prefix server/room-inn heroku master",
+    "heroku2": "git push heroku master",
     "start": "sequelize db:migrate & node ./bin/www"
   },
   "dependencies": {
@@ -12,6 +12,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "express-sanitize-escape": "^1.1.0",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.1.0",
     "morgan": "~1.9.0",

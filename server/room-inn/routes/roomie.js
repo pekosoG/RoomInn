@@ -13,10 +13,16 @@ router.use(params.expressMiddleware());
 router.post('/',function(req, res, next){
     let params = req.parameters;
     let roomieParam = params.require('roomie').permit('name','email','phone','photo','password','house_id').value();
-    models.Roomie.create(roomieParam).then(function(resp){
-        res.status(201).send({roomie:resp});
-    }).catch(function(err){
-        res.status(400).send({err:err.message});
+    models.Roomie.findOne({where:{email:roomieParam.email}}).then(function(resultRoomie){
+        if(!resultRoomie){
+            models.Roomie.create(roomieParam).then(function(resp){
+                res.status(201).send({roomie:resp});
+            }).catch(function(err){
+                res.status(400).send({err:err.message});
+            });
+        }
+        else
+            res.status(400).send({err:'Email already in use'});
     });
 });
 
