@@ -5,7 +5,7 @@
   "scripts": {
     "heroku":"git subtree push --prefix server/room-inn heroku master",
     "heroku2":"git push heroku master",
-    "start": "sequelize db:migrate & node ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.18.2",

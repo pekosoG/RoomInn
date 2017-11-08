@@ -28,6 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/v1/auth',auth);
+app.use('/v1/roomie',roomies);
 
 app.use(function(req, res, next){
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
@@ -49,7 +50,6 @@ app.use(function(req, res, next){
   }  
 });
 app.use('/v1/house',houses);
-app.use('/v1/roomie',roomies);
 app.use('/v1/service',services);
 
 // catch 404 and forward to error handler
