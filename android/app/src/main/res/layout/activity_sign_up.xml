@@ -17,33 +17,52 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Room-in"
+        android:text="@string/sign_up"
         android:textColor="@color/colorIcons"
         android:textSize="@dimen/principalText" />
+
 
     <TextView
         android:textColor="@color/colorIcons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The most have app for roomies"
+        android:text="@string/welcome_message"
         android:textSize="@dimen/secundaryText"
+        android:textAlignment="center"
         />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginBottom="15dp" />
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_defaultuser"
+            android:layout_marginBottom="15dp" />
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="fitEnd"
+            android:layout_gravity="right|bottom"
+            android:src="@android:drawable/ic_menu_camera"
+            android:background="@android:color/transparent"
+            />
+    </android.support.design.widget.CoordinatorLayout>
 
     <android.support.v7.widget.CardView
         android:layout_width="@dimen/widthCard"
-        android:layout_height="@dimen/heightCard"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@color/colorIcons"
         android:layout_marginLeft="@dimen/login_pading"
         android:layout_marginRight="@dimen/login_pading"
         android:layout_marginBottom="1dp">
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <EditText
             android:padding="@dimen/loginTextPading"
             android:layout_width="match_parent"
@@ -51,17 +70,6 @@
             android:hint="@string/fullname"
             android:textColorHint="@color/colorSecondaryText"
             android:background="@color/colorIcons"/>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="@dimen/widthCard"
-        android:layout_height="@dimen/heightCard"
-        android:layout_gravity="center"
-        android:background="@color/colorIcons"
-        android:layout_marginLeft="@dimen/login_pading"
-        android:layout_marginRight="@dimen/login_pading"
-        android:layout_marginBottom="1dp">
 
         <EditText
             android:padding="@dimen/loginTextPading"
@@ -71,15 +79,15 @@
             android:textColorHint="@color/colorSecondaryText"
             android:background="@color/colorIcons"/>
 
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:layout_width="@dimen/widthCard"
-        android:layout_height="@dimen/heightCard"
-        android:layout_gravity="center"
-        android:background="@color/colorIcons"
-        android:layout_marginLeft="@dimen/login_pading"
-        android:layout_marginRight="@dimen/login_pading"
-        android:layout_marginBottom="1dp">
+            <EditText
+                android:padding="@dimen/loginTextPading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/password2"
+                android:layout_marginTop="1dp"
+                android:inputType="textPassword"
+                android:textColorHint="@color/colorSecondaryText"
+                android:background="@color/colorIcons"/>
 
         <EditText
             android:padding="@dimen/loginTextPading"
@@ -88,7 +96,7 @@
             android:hint="@string/phone_number"
             android:textColorHint="@color/colorSecondaryText"
             android:background="@color/colorIcons"/>
-
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 
 

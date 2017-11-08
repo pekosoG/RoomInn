@@ -9,14 +9,18 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.*
+import kotlinx.android.synthetic.main.fragment_services.view.*
 import mx.devf.roominn.Adapters.ServicesAdapter
+import mx.devf.roominn.Interfaces.IMainNavigate
 import mx.devf.roominn.R
 
 /**
  * Created by Luis Rios on 07/11/2017.
  */
-class ServicesFragment : Fragment()
+class ServicesFragment : Fragment(), View.OnClickListener
 {
+
     companion object {
         //val ARG_HOUSE = "ARG_HOUSE"
 
@@ -34,11 +38,12 @@ class ServicesFragment : Fragment()
     protected var mRecyclerView: RecyclerView? = null
     protected var mAdapter: ServicesAdapter? = null
     protected var mLayoutManager: RecyclerView.LayoutManager? = null
+    protected var mainNavigate : IMainNavigate? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_services, container, false)
 
-        mRecyclerView = view?.findViewById(R.id.recyclerView)
+        mRecyclerView = view?.recyclerView
         mLayoutManager = LinearLayoutManager(activity)
         mAdapter = ServicesAdapter()
 
@@ -46,16 +51,32 @@ class ServicesFragment : Fragment()
         mRecyclerView?.adapter = mAdapter
         mRecyclerView?.itemAnimator = DefaultItemAnimator()
 
+        view?.fab?.setOnClickListener(this)
+
 
         return view
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
+
+
+    override fun onClick(p0: View?) {
+        when(p0?.id)
+        {
+            R.id.fab -> {
+                mainNavigate?.navigate(ServiceAddFragment.newIntances())
+            }
+        }
+    }
+
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
+        if(context is IMainNavigate)
+            mainNavigate = context
     }
 
 
