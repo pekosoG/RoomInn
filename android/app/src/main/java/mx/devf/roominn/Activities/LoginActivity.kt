@@ -1,7 +1,8 @@
-package mx.devf.roominn
+package mx.devf.roominn.Activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import mx.devf.roominn.R
 
 class LoginActivity : AppCompatActivity() {
 
