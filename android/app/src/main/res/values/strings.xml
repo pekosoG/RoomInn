@@ -3,8 +3,14 @@
     <string name="app_description">The most have app for roomies</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="fullname">Fullname*</string>
+    <string name="emailsu">Email*</string>
+    <string name="phone_number">Phone Number*</string>
+    <string name="sign_up">Sign UP</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+
+
 </resources>

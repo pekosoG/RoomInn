@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
         <!--android:name=".LoginActivity"-->
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             >
