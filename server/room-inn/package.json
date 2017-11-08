@@ -1,0 +1,24 @@
+{
+  "name": "room-inn",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.22.5",
+    "sequelize-cli": "^3.0.0",
+    "serve-favicon": "~2.4.5",
+    "strong-params": "^0.7.1"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^3.0.0"
+  }
+}
