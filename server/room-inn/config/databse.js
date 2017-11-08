@@ -16,7 +16,7 @@ module.exports={
   "production": {
     "username": process.env.CLEARDB_DATABASE_USER,
     "password": process.env.CLEARDB_DATABASE_PASS,
-    "database": "roomin_api",
+    "database": process.env.CLEARDB_DATABASE,
     "host": process.env.CLEARDB_DATABASE_URL,
     "dialect": "mysql"
   }
