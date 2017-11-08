@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+  color: #FFF;
+}
+
+.urls{
+font-family: Helvetica;
+font-size: 12px;
+color: #FFFFFF;
+}
+
+.no-margin{
+  margin: 0px;
+}
+
+.m-20{
+  margin: 20px 0;
+}
+
+.sign-up-back {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(-45deg, #4CA1AF 0%, #009688 100%);
+}
+
+.jumbo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.input-fat{
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  border-radius: 2px;
+  height: 55px;
+}
+
+.btn-fat-light{
+  background: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
+  border-radius: 2px;
+  font-family: Helvetica;
+  font-size: 14px;
+  color: #4CA1AF;
+  padding: 20px 50px;
+}
+
+.btn-fat-light:hover{
+  color: #FFF;
+}
+
+.social-icon{
+  margin-right: 10px;
+}
+
+.social-icon:hover{
+  opacity: 0.70;
+}
