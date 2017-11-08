@@ -9,6 +9,7 @@ The content is divided in the following order:
 1. __server/__ : Server/Backend files
 2. __web/__ : Web Client files
 3. __android/__ : Android Client files
+4. __landpage/__ : Landpage Front-end for this project
 4. __doc/__ : Documentation of the whole project
 
 
