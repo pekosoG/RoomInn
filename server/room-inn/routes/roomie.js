@@ -52,4 +52,16 @@ router.post('/invite',function(req, res, next){
     });
 });
 
+router.post('/authenticate',function(req, res, next){
+    let params = req.parameters;
+    let roomieData = params.require('roomie').permit('email','password').value();
+
+    models.Roomie.findOne({where:{email:roomieData.email}}).then(function(roomie){
+        if(!roomie){res.status(404).send({error:'Roomie not Found'});}
+        if(roomie.password!=roomieData.password){
+            res.status(400).send({error:'Incorrect Password'});
+        }
+    });
+});
+
 module.exports = router;
