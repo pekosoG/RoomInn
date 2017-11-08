@@ -11,14 +11,14 @@ router.use(bodyparser.json());
 router.use(params.expressMiddleware());
 
 router.post('/',function(req, res, next){
-    validate(req, res, next);
+    authenticate(req, res, next);
 });
 
 router.get('/',function(req, res, next){
-    validate(req, res, next);
+    authenticate(req, res, next);
 });
 
-function validate(req, res, next){
+function authenticate(req, res, next){
     let params = req.parameters;
     let roomieData = params.require('roomie').permit('email','password').value();
 
@@ -39,5 +39,4 @@ function validate(req, res, next){
         res.status(200).send({status:true,token:token});
     });
 }
-
 module.exports = router;
