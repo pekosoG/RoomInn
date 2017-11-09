@@ -50,6 +50,28 @@ RESPONSE: 200 OK
         "createdAt": "2017-11-08T07:41:01.567Z"
     }
 }
+```
+
+- __/v1/roomie/:id__:
+```JSON
+GET [JWT REQUIRED]
+RESPONSE: 200 OK
+
+{
+    "roomie":{
+        "id": 1,
+        "name": "User",
+        "email": "user@hotmail.com",
+        "phone": "3333333",
+        "photo": "photo.jpg",
+        "password": "12345",
+        "house_id": 1,
+        "register_date": null,
+        "update_date": null,
+        "createdAt": "2017-11-08T07:16:43.000Z",
+        "updatedAt": "2017-11-08T07:16:43.000Z"
+    }
+}
 
 PUT [JWT REQUIRED]
 {
@@ -75,6 +97,27 @@ RESPONSE: 200 OK
     }
 }
 ```
+
+- __/v1/roomie/byHouse/:house_id__:
+```JSON
+GET [JWT REQUIRED]
+RESPONSE: 200 OK
+[
+    {
+        "id": 1,
+        "name": "User",
+        "email": "user@hotmail.com",
+        "phone": "3333333",
+        "photo": "photo.jpg",
+        "password": "12345",
+        "house_id": 1,
+        "register_date": null,
+        "update_date": null,
+        "createdAt": "2017-11-08T07:16:43.000Z",
+        "updatedAt": "2017-11-08T07:16:43.000Z"
+    }
+]
+``` 
 
 - __/v1/house__ : 
 ```JSON
@@ -110,6 +153,23 @@ RESPONSE: 200 OK
       "createdAt": "2017-11-08T07:16:43.000Z",
       "updatedAt": "2017-11-08T07:16:43.000Z"
       }
+}
+```
+- __/v1/house/:id__ :
+```JSON
+GET [JWT REQUIRED]
+RESPONSE: 200 OK
+
+{
+    "house":{
+        "id":1,
+        "name":"Hood ",
+        "address":"Callle 3589",
+        "photo":"Photo.jpg",
+        "owner":1,
+        "createdAt": "2017-11-08T07:16:43.000Z",
+        "updatedAt": "2017-11-08T07:16:43.000Z"
+    }
 }
 
 PUT [JWT REQUIRED]
@@ -172,6 +232,22 @@ RESPONSE: 200 OK
       "updatedAt": "2017-11-08T07:16:43.000Z"
       }
 }
+```
+- __/v1/service/:id__ : 
+```JSON
+GET [JWT REQUIRED]
+RESPONSE: 200 OK
+{
+    "service":{
+        "name":"Internet",
+        "icon":"router-1.png",
+        "cost":1000.00,
+        "payment_due":15,
+        "house_id":1,
+        "createdAt": "2017-11-08T07:16:43.000Z",
+        "updatedAt": "2017-11-08T07:16:43.000Z"
+    }
+}
 
 PUT [JWT REQUIRED]
 {
@@ -195,6 +271,22 @@ RESPONSE: 200 OK
       "updatedAt": "2017-11-08T07:16:43.000Z"
       }
 }
+```
+- __/v1/service/byHouse/:house_id__ : 
+```JSON
+GET [JWT REQUIRED]
+RESPONSE: 200 OK
+[
+    {
+        "name":"Internet",
+        "icon":"router-1.png",
+        "cost":1000.00,
+        "payment_due":15,
+        "house_id":1,
+        "createdAt": "2017-11-08T07:16:43.000Z",
+        "updatedAt": "2017-11-08T07:16:43.000Z"
+    }
+]
 ```
 
 For Authentication, we are __using JTW__. That means that __you need to get a token__ in order to consume our Endpoints.
