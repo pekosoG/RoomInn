@@ -1,0 +1,97 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    }
+
+.hero {
+    background-image: linear-gradient(359deg, #08b9ac, #009688, #009688);
+    width: 100%vh;
+    height: 100vh;
+    display: block;
+}
+.logo{
+    position: absolute;
+    top:120px;
+    left:430px;
+    width: 350px;
+    height: 350px;
+}
+
+.room{
+    width: 280px;
+    height: 32px;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 0.89;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top:390px;
+    left:466px;
+    }
+.must{
+    width: 280px;
+    height: 58px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top:450px;
+    left:466px;
+    }
+.log-in {
+    width: 80px;
+    height: 28px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+}
+.logo-border{
+    width: 72px;
+    height: 21px;
+    border-radius: 2px;
+    background-color: #009688;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #ffffff;
+    position: absolute;
+    top: 25px;
+}
+
+.footer {
+    width: 100%vh;
+    height: 10%vh;
+    background-color: #025d56;
+}
+
+.features1 {
+    margin-top: 60px;
+}
+
+.features2 {
+    margin-bottom: 30px;
+}
+.facebook {
+    position: absolute;
+    left: 1100px;
+    bottom: -4px;
+    width: 40px;
+    height: 40px;
+}
+.by {
+    position: absolute;
+    top: 13px;
+    font-weight: 200;
+    text-align: center;
+    color: white;
+}
+.adress{
+    position: absolute;
+    top: 32px;
+    font-weight: 200;
+    text-align: center;
+    color: white;
+}
+
