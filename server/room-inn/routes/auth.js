@@ -33,7 +33,7 @@ function authenticate(req, res, next){
         }
 
         var token = jwt.sign(payload, superSecret, {
-            expiresIn: 1440 // expires in 24 hours
+            expiresIn: 1440*10 // expires in 24 hours
         });
 
         res.status(200).send({status:true,token:token});

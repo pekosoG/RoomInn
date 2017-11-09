@@ -14,6 +14,13 @@ router.get('/',function(req, res, next){
     });
 });
 
+router.get('/:id',function(req, res, next){
+    let houseId=req.params.id;
+    models.House.findOne({where:{id:houseId}}).then(function(resp){
+        res.status(200).send({house:resp});
+    });
+});
+
 router.post('/',function(req, res, next){
     let params = req.parameters;
     let houseParams = params.require('house').permit('name','address','photo','owner').value();
@@ -31,13 +38,13 @@ router.post('/',function(req, res, next){
 
 router.put('/:id',function(req, res, next){
     let params = req.parameters;
-    let house = params.require('house').permit('name','address','photo','owner').value();
+    let houseParams = params.require('house').permit('name','address','photo','owner').value();
     let houseId=req.params.id;
 
     models.House.findOne({where:{id:houseId}}).then(function(house){
         if(!house){ res.status(404).send({error:'House not found'})}
-        models.House.update(house,{where:{id:houseId}}).then(function(updatedHouse){
-            res.status(201).send({roomie:updatedHouse});
+        models.House.update(houseParams,{where:{id:houseId}}).then(function(updatedHouse){
+            res.status(201).send({house:houseParams});
         }).catch(function(err){
             res.status(400).send({err:err.message});
         });

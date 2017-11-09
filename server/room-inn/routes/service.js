@@ -14,6 +14,20 @@ router.get('/',function(req, res, next){
     });
 });
 
+router.get('/:id',function(req, res, next){
+    let serviceId=req.params.id;
+    models.Service.findOne({where:{id:serviceId}}).then(function(resp){
+        res.status(200).send({service:resp});
+    });
+});
+
+router.get('/byHouse/:id',function(req, res, next){
+    let houseId=req.params.id;
+    models.Service.findAll({where:{house_id:houseId}}).then(function(resp){
+        res.send(resp);
+    });
+});
+
 router.post('/',function(req, res, next){
     let params = req.parameters;
     let serviceParams = params.require('service').permit('name','icon','cost','payment_due','house_id').value();
@@ -24,7 +38,7 @@ router.post('/',function(req, res, next){
     });
 });
 
-router.put('/',function(req, res, next){
+router.put('/:id',function(req, res, next){
     let params = req.parameters;
     let serviceParams = params.require('service').permit('name','icon','cost','payment_due','house_id').value();
     let serviceId=req.params.id;

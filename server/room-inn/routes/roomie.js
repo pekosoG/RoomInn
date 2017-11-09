@@ -52,6 +52,20 @@ router.get('/',function(req, res, next){
     });
 });
 
+router.get('/:id',function(req, res, next){
+    let roomieId=req.params.id;
+    models.Roomie.findOne({where:{id:roomieId}}).then(function(resp){
+        res.status(200).send({roomie:resp});
+    });
+});
+
+router.get('/byHouse/:id',function(req, res, next){
+    let houseId=req.params.id;
+    models.Roomie.findAll({where:{house_id:houseId}}).then(function(resp){
+        res.send(resp);
+    });
+});
+
 router.put('/:id',function(req, res, next){
     let params = req.parameters;
     let roomieParam = params.require('roomie').permit('name','email','phone','photo','password','house_id').value();
@@ -60,7 +74,7 @@ router.put('/:id',function(req, res, next){
     models.Roomie.findOne({where:{id:roomieId}}).then(function(roomie){
         if(!roomie){ res.status(404).send({error:'Roomie not found'})}
         models.Roomie.update(roomieParam,{where:{id:roomieId}}).then(function(updatedRoomie){
-            res.status(201).send({roomie:updatedRoomie});
+            res.status(201).send({roomie:roomieParam});
         }).catch(function(err){
             res.status(400).send({err:err.message});
         });
