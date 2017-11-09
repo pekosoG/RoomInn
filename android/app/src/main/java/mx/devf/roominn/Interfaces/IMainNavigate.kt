@@ -9,4 +9,5 @@ interface IMainNavigate
 {
     fun navigate(fragment : Fragment)
     fun navigate(fragment : Fragment, tag :String)
+    fun logout()
 }

@@ -39,7 +39,6 @@ class ToggleButtonGroupTableLayout : TableLayout, OnClickListener {
             activeRadioButton!!.isChecked = false
         }
         rb.isChecked = true
-        activeRadioButton!!.background = null;
         activeRadioButton = rb
     }
 

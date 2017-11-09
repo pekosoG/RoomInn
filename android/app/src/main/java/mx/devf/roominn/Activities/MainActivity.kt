@@ -1,5 +1,6 @@
 package mx.devf.roominn.Activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
@@ -36,7 +37,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        navigate(ServicesFragment.newIntances(), "Test")
+        nav_view.setCheckedItem(R.id.nav_housedetails)
+        navigate(HouseFragment.newIntances(), "Hose Details")
     }
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -73,6 +75,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 R.id.nav_services -> {
                     navigate(ServicesFragment.newIntances(), tag)
                 }
+                R.id.nav_logout ->  logout()
             }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
@@ -92,5 +95,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .setCustomAnimations(R.anim.slide_right_enter, R.anim.slide_left_exit)
                 .replace(R.id.content, fragment, tag)
                 .commit()
+    }
+
+    override fun logout(){
+        //Todo : Borrar Session
+        val intent = Intent(this, MainActivity::class.java)
+        //intent.putExtra(Constants.INTENT_KEY_USERNAME, username)
+        startActivity(intent)
+        finish()
     }
 }

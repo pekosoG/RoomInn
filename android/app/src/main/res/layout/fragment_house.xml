@@ -42,7 +42,7 @@
                         android:id="@+id/txtAddress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="30dp"
+                        android:layout_margin="3dp"
                         android:text="Av de las Rosas #1456"
                         android:textColor="@color/colorDivider"
                         android:textSize="25sp" />
@@ -54,7 +54,7 @@
                 android:id="@+id/txtDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_margin="5dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam..."
                 android:textSize="15sp" />
 
