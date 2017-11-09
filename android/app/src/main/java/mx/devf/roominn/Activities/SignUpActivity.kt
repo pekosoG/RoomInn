@@ -50,7 +50,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
 
 
         val dialog = MaterialDialog.Builder(this)
-                .title("Take Picture?")
+                .title("Take Pic")
                 .positiveText("Gallery")
                 .negativeText("Camera")
                 .onPositive { dialog, which -> dialog.dismiss(); findPicture()  }
