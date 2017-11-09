@@ -50,6 +50,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <EditText
+                android:id="@+id/tvEmail"
                 android:padding="@dimen/loginTextPading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,6 +61,7 @@
 
 
             <EditText
+                android:id="@+id/tvPassword"
                 android:padding="@dimen/loginTextPading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,6 +130,7 @@
 
     <LinearLayout
         android:layout_marginTop="@dimen/login_pading"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">

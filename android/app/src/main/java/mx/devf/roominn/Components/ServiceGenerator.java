@@ -12,9 +12,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
 
-    public static final String API_BASE_URL = "https://thawing-sea-93287.herokuapp.com/";
+    public static final String API_BASE_URL = "https://thawing-sea-93287.herokuapp.com";
 
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+
 
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
@@ -24,18 +25,7 @@ public class ServiceGenerator {
     private static Retrofit retrofit = builder.build();
 
     public static <S> S createService(Class<S> serviceClass) {
-        return createService(serviceClass, null, null);
-    }
-
-    public static <S> S createService(
-            Class<S> serviceClass, String username, String password) {
-        if (!TextUtils.isEmpty(username)
-                && !TextUtils.isEmpty(password)) {
-            String authToken = Credentials.basic(username, password);
-            return createService(serviceClass, authToken);
-        }
-
-        return createService(serviceClass, null, null);
+        return createService(serviceClass, null);
     }
 
     public static <S> S createService(
@@ -46,6 +36,7 @@ public class ServiceGenerator {
 
             if (!httpClient.interceptors().contains(interceptor)) {
                 httpClient.addInterceptor(interceptor);
+
                 builder.client(httpClient.build());
                 retrofit = builder.build();
             }
@@ -53,5 +44,4 @@ public class ServiceGenerator {
 
         return retrofit.create(serviceClass);
     }
-
 }
