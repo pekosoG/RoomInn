@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var House = sequelize.define('House', {
     name: DataTypes.STRING,
-    addres: DataTypes.STRING,
+    address: DataTypes.STRING,
     photo: DataTypes.STRING,
     owner: DataTypes.INTEGER,
     register_date: DataTypes.DATE,
