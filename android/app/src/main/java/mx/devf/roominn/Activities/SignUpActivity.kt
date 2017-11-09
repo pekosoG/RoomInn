@@ -15,10 +15,24 @@ import com.afollestad.materialdialogs.MaterialDialog
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import mx.devf.roominn.R
 import android.content.DialogInterface
+import android.inputmethodservice.KeyboardView
+import android.util.Log
+import kotlinx.android.synthetic.main.activity_login.*
+import mx.devf.roominn.API.RoomInnService
+import mx.devf.roominn.Components.KeyboardUtils
+import mx.devf.roominn.Components.RoomInnUtils
+import mx.devf.roominn.Components.ServiceGenerator
+import mx.devf.roominn.Settings
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
+class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<RoomInnService.ResponseRoomie> {
 
-class SignUpActivity : AppCompatActivity(), View.OnClickListener {
+
+    var service : RoomInnService? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +50,83 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    fun signUp(){
-        validateSignUp()
+    private fun setupServices() {
+        service = ServiceGenerator.createService(RoomInnService::class.java)
     }
 
-    fun validateSignUp(){
+
+    fun signUp(){
+        val roomie = validate()
+        if(roomie != null) {
+            content?.visibility = View.INVISIBLE
+            progress?.visibility = View.VISIBLE
+            KeyboardUtils.hideSoftInput(this)
+            val req = RoomInnService.RequestRoomie(roomie)
+            service?.postRoomie(req)!!.enqueue(this)
+        }
+    }
+    override fun onResponse(call: Call<RoomInnService.ResponseRoomie>?, response: Response<RoomInnService.ResponseRoomie>?) {
+        content?.visibility = View.VISIBLE
+        progress?.visibility = View.INVISIBLE
+        val email = etEmail?.text.toString().trim()
+        if(response?.code() == 201) {
+
+            val body = response?.body()
+            Log.e("myLog", "success insert - $body.id")
+            Settings.saveEmail(this, body!!.roomie.email)
+            onBackPressed()
+        }
+        else {
+            val error = response?.errorBody()?.string()
+
+            btnLogIn?.visibility = View.VISIBLE
+            login_progress?.visibility = View.INVISIBLE
+            Snackbar.make(tvPassword, error ?: "Problem in the services", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+        }
+    }
+
+    override fun onFailure(call: Call<RoomInnService.ResponseRoomie>?, t: Throwable?) {
+        content?.visibility = View.VISIBLE
+        progress?.visibility = View.INVISIBLE
+        Log.e("myLog", "Valio madres...")
+        t?.printStackTrace()
+
+        Snackbar.make(tvPassword, t?.message ?: "Problem in the services", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+    }
+
+    fun validate() : RoomInnService.RoominnRoomiePost?{
         //var error : String = ""
+        val fullname = etFullname?.text.toString().trim()
+        val email = etEmail?.text.toString().trim()
+        val password = etPassword?.text.toString().trim()
+        val phone = etPhone?.text.toString().trim()
+
+        if(fullname == "") {
+            Snackbar.make(etFullname, "Email required", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+            return null
+        }
+        if(email == "") {
+            Snackbar.make(etEmail, "Email required", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+            return null
+        }
+        if(password == "") {
+            Snackbar.make(etEmail, "Password required", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+            return null
+        }
+        if(phone == "") {
+            Snackbar.make(etEmail, "Password required", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+            return null
+        }
+
+        val imagen = RoomInnUtils.toBase64(imgUser!!)
+
+        return RoomInnService.RoominnRoomiePost(fullname, email, phone, imagen, password)
         //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
         //        .setAction("Action", null).show()
     }

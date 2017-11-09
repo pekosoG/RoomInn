@@ -6,6 +6,7 @@ import { ServicesComponent } from './services/services.component'
 import { NewServiceComponent } from './new-service/new-service.component'
 import { RoomiesComponent } from './roomies/roomies.component'
 
+
 export const appRoutes: Routes = [
   { path: 'login', component: LogInComponent },
   { path: 'signup', component: SignUpComponent },
