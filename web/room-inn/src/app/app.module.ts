@@ -8,6 +8,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { HouseDetailsComponent } from './house-details/house-details.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ServicesComponent } from './services/services.component';
+import { NewServiceComponent } from './new-service/new-service.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ServicesComponent } from './services/services.component';
     SignUpComponent,
     HouseDetailsComponent,
     SideBarComponent,
-    ServicesComponent
+    ServicesComponent,
+    NewServiceComponent
   ],
   imports: [
     BrowserModule,
