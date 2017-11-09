@@ -45,8 +45,6 @@ class RoomiesFragment : Fragment()
         mRecyclerView?.layoutManager = mLayoutManager
         mRecyclerView?.adapter = mAdapter
         mRecyclerView?.itemAnimator = DefaultItemAnimator()
-
-
         return view
     }
     override fun onCreate(savedInstanceState: Bundle?) {

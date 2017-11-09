@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:grid="http://schemas.android.com/tools"
+    >
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="6dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="6dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/service_name"
+                />
+
+            <EditText
+                android:id="@+id/editServiceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/service_icon"
+                />
+
+            <mx.devf.roominn.ToggleButtonGroupTableLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:id="@+id/radGroup1"
+                android:layoutMode="clipBounds"
+
+                >
+
+                <TableRow android:layout_weight="1">
+
+                    <!--android:drawableTint="@color/colorAccent"-->
+
+                    <RadioButton
+                        android:id="@+id/radioRent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_servicerent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/service_icon_margin"
+                        android:layout_marginRight="@dimen/service_icon_margin"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioElectricity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_serviceelectricity"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/service_icon_margin"
+                        android:layout_marginRight="@dimen/service_icon_margin"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioInternet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_serviceinternet"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/service_icon_margin"
+                        android:layout_marginRight="@dimen/service_icon_margin"
+                         />
+                </TableRow>
+                <TableRow android:layout_weight="1">
+
+                    <RadioButton
+                        android:id="@+id/radiPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_servicephone"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/service_icon_margin"
+                        android:layout_marginRight="@dimen/service_icon_margin"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioCable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_servicecable"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/service_icon_margin"
+                        android:layout_marginRight="@dimen/service_icon_margin"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioWater"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_servicewater"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/service_icon_margin"
+                        android:layout_marginRight="@dimen/service_icon_margin"
+                        />
+                </TableRow>
+                <TableRow android:layout_weight="1">
+                    <RadioButton
+                        android:id="@+id/radioGas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_servicegas"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/service_icon_margin"
+                        android:layout_marginRight="@dimen/service_icon_margin"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioCleaning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_servicecleaning"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/service_icon_margin"
+                        android:layout_marginRight="@dimen/service_icon_margin"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioOthers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_serviceothers"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/service_icon_margin"
+                        android:layout_marginRight="@dimen/service_icon_margin"
+                        />
+                </TableRow>
+            </mx.devf.roominn.ToggleButtonGroupTableLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cost"
+                />
+
+            <EditText
+                android:id="@+id/editCost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_due"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/editPaymentDur"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/of_the_month"
+                    android:textStyle="italic"
+                    />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="4dp"
+                android:paddingEnd="4dp"
+                android:layout_gravity="end"
+                android:text="@string/save"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorIcons"
+                />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

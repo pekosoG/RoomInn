@@ -1,5 +1,6 @@
 package mx.devf.roominn.Activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
@@ -13,8 +14,10 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 import mx.devf.roominn.R
 import mx.devf.roominn.Fragments.RoomiesFragment
 import mx.devf.roominn.Fragments.ServicesFragment
+import mx.devf.roominn.HouseFragment
+import mx.devf.roominn.Interfaces.IMainNavigate
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener  {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, IMainNavigate  {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +37,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        navigate(ServicesFragment.newIntances(), "Test")
+        nav_view.setCheckedItem(R.id.nav_housedetails)
+        navigate(HouseFragment.newIntances(), "Hose Details")
     }
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -63,7 +67,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             when (item.itemId) {
             // Handles
                 R.id.nav_housedetails -> {
-
+                    navigate(HouseFragment.newIntances(), tag)
                 }
                 R.id.nav_roomies -> {
                     navigate(RoomiesFragment.newIntances(), tag)
@@ -71,17 +75,33 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 R.id.nav_services -> {
                     navigate(ServicesFragment.newIntances(), tag)
                 }
+                R.id.nav_logout ->  logout()
             }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    private fun navigate(fragment : Fragment, tag : String)
+    override fun navigate(fragment : Fragment)
+    {
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.content, fragment)
+                .commit()
+    }
+
+    override fun navigate(fragment : Fragment, tag : String)
     {
         supportFragmentManager.beginTransaction()
                 .setCustomAnimations(R.anim.slide_right_enter, R.anim.slide_left_exit)
                 .replace(R.id.content, fragment, tag)
                 .commit()
+    }
+
+    override fun logout(){
+        //Todo : Borrar Session
+        val intent = Intent(this, MainActivity::class.java)
+        //intent.putExtra(Constants.INTENT_KEY_USERNAME, username)
+        startActivity(intent)
+        finish()
     }
 }
