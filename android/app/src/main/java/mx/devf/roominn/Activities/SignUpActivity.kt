@@ -29,7 +29,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<ResponseBody> {
+class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<RoomInnService.ResponseRoomie> {
+
 
     var service : RoomInnService? = null
 
@@ -60,19 +61,19 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<Respo
             content?.visibility = View.INVISIBLE
             progress?.visibility = View.VISIBLE
             KeyboardUtils.hideSoftInput(this)
-            service?.postRoomie(RoomInnService.RequestRoomie(roomie))?.enqueue(this)
+            val req = RoomInnService.RequestRoomie(roomie)
+            service?.postRoomie(req)!!.enqueue(this)
         }
     }
-
-    override fun onResponse(call: Call<ResponseBody>?, response: Response<ResponseBody>?) {
+    override fun onResponse(call: Call<RoomInnService.ResponseRoomie>?, response: Response<RoomInnService.ResponseRoomie>?) {
         content?.visibility = View.VISIBLE
         progress?.visibility = View.INVISIBLE
         val email = etEmail?.text.toString().trim()
-        if(response?.code() == 200) {
+        if(response?.code() == 201) {
 
             val body = response?.body()
-            Log.e("myLog", "success insert - $email")
-            Settings.saveEmail(this, email)
+            Log.e("myLog", "success insert - $body.id")
+            Settings.saveEmail(this, body!!.roomie.email)
             onBackPressed()
         }
         else {
@@ -85,7 +86,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<Respo
         }
     }
 
-    override fun onFailure(call: Call<ResponseBody>?, t: Throwable?) {
+    override fun onFailure(call: Call<RoomInnService.ResponseRoomie>?, t: Throwable?) {
         content?.visibility = View.VISIBLE
         progress?.visibility = View.INVISIBLE
         Log.e("myLog", "Valio madres...")
@@ -95,7 +96,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<Respo
                 .setAction("Action", null).show()
     }
 
-    fun validate() : RoomInnService.RoominnRoomie?{
+    fun validate() : RoomInnService.RoominnRoomiePost?{
         //var error : String = ""
         val fullname = etFullname?.text.toString().trim()
         val email = etEmail?.text.toString().trim()
@@ -125,7 +126,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<Respo
 
         val imagen = RoomInnUtils.toBase64(imgUser!!)
 
-        return RoomInnService.RoominnRoomie(fullname, email, phone, imagen, password)
+        return RoomInnService.RoominnRoomiePost(fullname, email, phone, imagen, password)
         //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
         //        .setAction("Action", null).show()
     }

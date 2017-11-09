@@ -14,7 +14,8 @@ class AuthenticationInterceptor(private val authToken: String) : Interceptor {
         val original = chain.request()
 
         val builder = original.newBuilder()
-                .header("Authorization", authToken)
+                .header("x-access-token", authToken)
+                //.header("Authorization", authToken)
 
         val request = builder.build()
         return chain.proceed(request)
