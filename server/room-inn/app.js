@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 let jwt = require('jsonwebtoken');
 let superSecret = 'parangiricutirimicuaro*2';
+var expressSanitized = require('express-sanitize-escape');
 
 var index = require('./routes/index');
 var houses = require('./routes/house');
@@ -23,11 +24,13 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(expressSanitized.middleware()); 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/v1/auth',auth);
+app.use('/v1/roomie',roomies);
 
 app.use(function(req, res, next){
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
@@ -49,7 +52,6 @@ app.use(function(req, res, next){
   }  
 });
 app.use('/v1/house',houses);
-app.use('/v1/roomie',roomies);
 app.use('/v1/service',services);
 
 // catch 404 and forward to error handler

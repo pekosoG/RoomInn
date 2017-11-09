@@ -3,7 +3,7 @@ module.exports={
     "username": "root",
     "password": "root",
     "database": "roomin_api",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +14,10 @@ module.exports={
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": process.env.CLEARDB_DATABASE_USER,
+    "password": process.env.CLEARDB_DATABASE_PASS,
+    "database": process.env.CLEARDB_DATABASE,
+    "host": process.env.CLEARDB_DATABASE_URL,
     "dialect": "mysql"
   }
 }
