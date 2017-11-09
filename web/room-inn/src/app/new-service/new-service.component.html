@@ -1,0 +1,93 @@
+<app-side-bar></app-side-bar>
+
+<nav class="navbar custom-nav">
+    <div class="container-fluid">
+      <div class="navbar-header col-sm-12">
+        <p class="title">ADD SERVICE</p>
+      </div>
+    </div>
+  </nav>
+
+  <div class="col-sm-5 col-centered">
+      <div class="card">
+          <div class="group">
+              <input type="text" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Service Name</label>
+          </div>
+          <p style="color:#878787">Icon</p>
+          <div class="grid col-centered">
+              <div class="container-fluid">
+                  <div class="row">
+                   <div class="col-xs-4">
+                      <button type="button" class="btn btn-primary service-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                          <img src="../assets/svg/serviceRent.svg" style="color:#FFF">
+                      </button>
+                   </div>
+                   <div class="col-xs-4">
+                      <button type="button" class="btn btn-primary service-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                          <img src="../assets/svg/serviceElectricity.svg" style="color:#FFF">
+                      </button>
+                   </div>
+                   <div class="col-xs-4">
+                      <button type="button" class="btn btn-primary service-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                          <img src="../assets/svg/serviceInternet.svg" style="color:#FFF">
+                      </button>
+                   </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-4">
+                         <button type="button" class="btn btn-primary service-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                             <img src="../assets/svg/servicePhone.svg" style="color:#FFF">
+                         </button>
+                      </div>
+                      <div class="col-xs-4">
+                         <button type="button" class="btn btn-primary service-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                             <img src="../assets/svg/serviceCable.svg" style="color:#FFF">
+                         </button>
+                      </div>
+                      <div class="col-xs-4">
+                         <button type="button" class="btn btn-primary service-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                             <img src="../assets/svg/serviceWater.svg" style="color:#FFF">
+                         </button>
+                      </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-xs-4">
+                           <button type="button" class="btn btn-primary service-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                               <img src="../assets/svg/serviceGas.svg" style="color:#FFF">
+                           </button>
+                        </div>
+                        <div class="col-xs-4">
+                           <button type="button" class="btn btn-primary service-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                               <img src="../assets/svg/serviceCleaning.svg" style="color:#FFF">
+                           </button>
+                        </div>
+                        <div class="col-xs-4">
+                           <button type="button" class="btn btn-primary service-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                               <img src="../assets/svg/serviceOthers.svg" style="color:#FFF">
+                           </button>
+                        </div>
+                       </div>
+                </div>
+          </div>
+
+          <div class="group">
+              <input type="text" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Cost</label>
+          </div>
+          <div class="group">
+              <input type="text" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label style="float:left;">Payment Due</label>
+              <span style="color:black">/ of every month</span>
+          </div>
+
+          <a href="#" class="button-dark" routerLink="/services">Cancel</a>
+          <a href="#" class="button-dark">Save</a>
+      </div>
+  </div>
