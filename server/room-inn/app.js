@@ -4,11 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+let jwt = require('jsonwebtoken');
+let superSecret = 'parangiricutirimicuaro*2';
+var expressSanitized = require('express-sanitize-escape');
 
 var index = require('./routes/index');
 var houses = require('./routes/house');
 var roomies = require('./routes/roomie');
 var services = require('./routes/service');
+var auth = require('./routes/auth');
 
 var app = express();
 
@@ -20,13 +24,34 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(expressSanitized.middleware()); 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/v1/house',houses);
+app.use('/v1/auth',auth);
 app.use('/v1/roomie',roomies);
+
+app.use(function(req, res, next){
+  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+  if (token) {
+    jwt.verify(token, superSecret, function(err, decoded) {      
+      if (err) {
+        return res.json({ success: false, message: 'Failed to authenticate token.' });    
+      } else {
+        req.decoded = decoded;    
+        next();
+      }
+    });
+  } 
+  else {
+    return res.status(403).send({ 
+      success: false, 
+      message: 'No token provided.' 
+    });
+  }  
+});
+app.use('/v1/house',houses);
 app.use('/v1/service',services);
 
 // catch 404 and forward to error handler

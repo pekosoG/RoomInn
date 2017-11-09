@@ -3,24 +3,52 @@ var router = express.Router();
 let models = require('../db/models');
 let params = require('strong-params');
 let bodyparser = require('body-parser');
+let jwt = require('jsonwebtoken');
+let superSecret = 'parangiricutirimicuaro*2';
 
 router.use(bodyparser.urlencoded({extended:true}));
 router.use(bodyparser.json());
 router.use(params.expressMiddleware());
 
-router.get('/',function(req, res, next){
-    models.Roomie.findAll().then(function(resp){
-        res.send(resp);
-    });
-});
-
 router.post('/',function(req, res, next){
     let params = req.parameters;
     let roomieParam = params.require('roomie').permit('name','email','phone','photo','password','house_id').value();
-    models.Roomie.create(roomieParam).then(function(resp){
-        res.status(201).send({roomie:resp});
-    }).catch(function(err){
-        res.status(400).send({err:err.message});
+    models.Roomie.findOne({where:{email:roomieParam.email}}).then(function(resultRoomie){
+        if(!resultRoomie){
+            models.Roomie.create(roomieParam).then(function(resp){
+                res.status(201).send({roomie:resp});
+            }).catch(function(err){
+                res.status(400).send({err:err.message});
+            });
+        }
+        else
+            res.status(400).send({err:'Email already in use'});
+    });
+});
+
+router.use(function(req, res, next){
+    var token = req.body.token || req.query.token || req.headers['x-access-token'];
+    if (token) {
+      jwt.verify(token, superSecret, function(err, decoded) {      
+        if (err) {
+          return res.json({ success: false, message: 'Failed to authenticate token.' });    
+        } else {
+          req.decoded = decoded;    
+          next();
+        }
+      });
+    } 
+    else {
+      return res.status(403).send({ 
+        success: false, 
+        message: 'No token provided.' 
+      });
+    }  
+  });
+
+router.get('/',function(req, res, next){
+    models.Roomie.findAll().then(function(resp){
+        res.send(resp);
     });
 });
 
