@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.Preference
 import android.support.design.widget.Snackbar
 import android.util.Log
 import android.view.View
@@ -16,9 +15,6 @@ import mx.devf.roominn.Settings
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import android.content.Context.INPUT_METHOD_SERVICE
 import android.view.inputmethod.InputMethodManager
 import mx.devf.roominn.Components.KeyboardUtils
 
@@ -59,7 +55,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, Callback<RoomIn
         imm.hideSoftInputFromWindow(p0?.getWindowToken(), 0)
     }
 
-    fun validate() : RoomInnService.RoominnUser? {
+    fun validate() : RoomInnService.RoominUser? {
         val email = tvEmail!!.text.trim().toString()
         val password = tvPassword!!.text.trim().toString()
 
@@ -77,7 +73,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, Callback<RoomIn
             return null
         }
 
-        return RoomInnService.RoominnUser(email, password);
+        return RoomInnService.RoominUser(email, password);
     }
 
     fun login(){

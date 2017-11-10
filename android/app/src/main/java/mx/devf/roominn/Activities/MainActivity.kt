@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import mx.devf.roominn.API.RoomInnService
@@ -77,12 +78,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             // Handles
                 R.id.nav_housedetails -> {
                     navigate(HouseFragment.newIntances(), tag)
+                    this.title = tag
                 }
                 R.id.nav_roomies -> {
                     navigate(RoomiesFragment.newIntances(), tag)
+                    this.title = tag
                 }
                 R.id.nav_services -> {
                     navigate(ServicesFragment.newIntances(), tag)
+                    this.title = tag
                 }
                 R.id.nav_logout ->  logout()
             }
@@ -105,6 +109,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun navigate(fragment : Fragment, tag : String)
     {
+        hideLoading()
         supportFragmentManager.beginTransaction()
                 .setCustomAnimations(R.anim.slide_right_enter, R.anim.slide_left_exit)
                 .replace(R.id.content, fragment, tag)
@@ -118,6 +123,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //intent.putExtra(Constants.INTENT_KEY_USERNAME, username)
         startActivity(intent)
         finish()
+    }
+    override fun showLoading() {
+        progressLayout?.visibility = View.VISIBLE
+    }
+
+    override fun hideLoading() {
+        progressLayout?.visibility = View.INVISIBLE
     }
 
 

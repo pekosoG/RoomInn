@@ -8,7 +8,8 @@ import android.content.Context
 class Settings{
     companion object {
         val PREF_AUTH : String = "PREF_AUTH"
-        val PREf_TOKEN_KEY = "PREF_AUTH_TOKEN"
+        val PREf_AUTH_TOKEN_KEY = "PREF_AUTH_TOKEN"
+        val PREF_AUTH_ROOMIE_KEY = "PREF_AUTH_ROOMIE"
 
         val PREF_USER : String = "PREF_USER"
         val PREF_USER_EMAIL : String = "PREF_USER_EMAIL"
@@ -32,7 +33,7 @@ class Settings{
         fun getToken(context : Context) : String
         {
             val preference = context.getSharedPreferences(PREF_AUTH, Context.MODE_PRIVATE)
-            return preference.getString(PREf_TOKEN_KEY, "")
+            return preference.getString(PREf_AUTH_TOKEN_KEY, "")
 
         }
 
@@ -40,9 +41,24 @@ class Settings{
         {
             val preference = context.getSharedPreferences(PREF_AUTH, Context.MODE_PRIVATE)
             preference.edit()
-                    .putString(PREf_TOKEN_KEY,token)
+                    .putString(PREf_AUTH_TOKEN_KEY,token)
                     .commit()
         }
+        fun getAuthKey(context : Context) : String
+        {
+            val preference = context.getSharedPreferences(PREF_AUTH, Context.MODE_PRIVATE)
+            return preference.getString(PREf_AUTH_TOKEN_KEY, "")
+
+        }
+
+        fun saveAuthKey(context : Context, token:String)
+        {
+            val preference = context.getSharedPreferences(PREF_AUTH, Context.MODE_PRIVATE)
+            preference.edit()
+                    .putString(PREf_AUTH_TOKEN_KEY,token)
+                    .commit()
+        }
+
 
 
     }
