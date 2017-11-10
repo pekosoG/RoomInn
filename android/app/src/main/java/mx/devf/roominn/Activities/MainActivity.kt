@@ -1,5 +1,6 @@
 package mx.devf.roominn.Activities
 
+import android.app.Service
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -11,14 +12,19 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import mx.devf.roominn.API.RoomInnService
+import mx.devf.roominn.Components.ServiceGenerator
 import mx.devf.roominn.R
 import mx.devf.roominn.Fragments.RoomiesFragment
 import mx.devf.roominn.Fragments.ServicesFragment
 import mx.devf.roominn.HouseFragment
 import mx.devf.roominn.Interfaces.IMainNavigate
+import mx.devf.roominn.Settings
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, IMainNavigate  {
 
+    override var service : RoomInnService? = null
+    var token : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +44,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
 
         nav_view.setCheckedItem(R.id.nav_housedetails)
-        navigate(HouseFragment.newIntances(), "Hose Details")
+        navigate(HouseFragment.newIntances(), "House Details")
+        setupService()
+
     }
+
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
@@ -82,6 +91,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    private fun setupService() {
+        token = Settings.getToken(this)
+        service = ServiceGenerator.createService(RoomInnService::class.java, token)
+    }
+
     override fun navigate(fragment : Fragment)
     {
         supportFragmentManager.beginTransaction()
@@ -98,10 +112,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun logout(){
-        //Todo : Borrar Session
-        val intent = Intent(this, MainActivity::class.java)
+
+        Settings.saveToken(this, "")
+        val intent = Intent(this, LoginActivity::class.java)
         //intent.putExtra(Constants.INTENT_KEY_USERNAME, username)
         startActivity(intent)
         finish()
     }
+
+
 }

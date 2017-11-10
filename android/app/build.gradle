@@ -34,6 +34,7 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.2.0'
     //material dialogs
     compile 'com.afollestad.material-dialogs:commons:0.9.4.0'
+    //compile 'com.afollestad.material-dialogs:core:0.9.5.0'
     //compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
     compile 'com.pnikosis:materialish-progress:1.7'
     //refrofit
