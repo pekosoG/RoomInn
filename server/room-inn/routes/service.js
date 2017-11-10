@@ -19,9 +19,9 @@ router.get('/:id',function(req, res, next){
     models.Service.findOne({where:{id:serviceId},raw:true}).then(function(resp){
         models.Roomie.findAll({where:{house_id:resp.house_id}}).then(function(roomies){
             if(roomies)
-                resp.individual_cost=resp.cost/roomies.length;
+                resp.roomie_cost=resp.cost/roomies.length;
             else
-                resp.individual_cost=resp.cost;
+                resp.roomie_cost=resp.cost;
             res.status(200).send({service:resp});
         })
     });
@@ -33,9 +33,9 @@ router.get('/byHouse/:id',function(req, res, next){
         models.Roomie.findAll({where:{house_id:houseId}}).then(function(roomies){
             response=resp.map(function(item){
                 if(roomies)
-                    item.dataValues.individual_cost=item.cost/roomies.length;
+                    item.dataValues.roomie_cost=item.cost/roomies.length;
                 else
-                    item.dataValues.individual_cost=item.cost;
+                    item.dataValues.roomie_cost=item.cost;
                 return item;
             });
             res.status(200).send(response);
