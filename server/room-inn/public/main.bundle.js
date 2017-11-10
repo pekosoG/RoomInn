@@ -88,12 +88,16 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__house_details_house_details_component__ = __webpack_require__("../../../../../src/app/house-details/house-details.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__side_bar_side_bar_component__ = __webpack_require__("../../../../../src/app/side-bar/side-bar.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_services_component__ = __webpack_require__("../../../../../src/app/services/services.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__new_service_new_service_component__ = __webpack_require__("../../../../../src/app/new-service/new-service.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__roomies_roomies_component__ = __webpack_require__("../../../../../src/app/roomies/roomies.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -115,7 +119,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_6__sign_up_sign_up_component__["a" /* SignUpComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__house_details_house_details_component__["a" /* HouseDetailsComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__side_bar_side_bar_component__["a" /* SideBarComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__services_services_component__["a" /* ServicesComponent */]
+                __WEBPACK_IMPORTED_MODULE_9__services_services_component__["a" /* ServicesComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__new_service_new_service_component__["a" /* NewServiceComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__roomies_roomies_component__["a" /* RoomiesComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -140,7 +146,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".card {\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n}\n\n.card {\n  margin-top: 10px;\n  box-sizing: border-box;\n  border-radius: 2px;\n  background-clip: padding-box;\n}\n.card span.card-title {\n  font-family: Helvetica-Bold;\n  font-size: 24px;\n  color: #FFFFFF;\n  line-height: 22px;\n}\n\n.card .card-image {\n  position: relative;\n  overflow: hidden;\n}\n.card .card-image img {\n  border-radius: 2px 2px 0 0;\n  background-clip: padding-box;\n  position: relative;\n  z-index: -1;\n}\n.card .card-image span.card-title {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  padding: 16px;\n}\n.card .card-content {\n  padding: 16px;\n  border-radius: 0 0 2px 2px;\n  background-clip: padding-box;\n  box-sizing: border-box;\n}\n.card .card-content p {\n  color: #878787;\n  margin: 0;\n}\n.card .card-content span.card-title {\n  line-height: 48px;\n}\n.card .card-action {\n  border-top: 1px solid rgba(160, 160, 160, 0.2);\n  padding: 16px;\n}\n.card .card-action a {\n  color: #FFF;\n  margin-right: 16px;\n  transition: color 0.3s ease;\n  text-transform: uppercase;\n  background-image: linear-gradient(-45deg, #4CA1AF 0%, #009688 100%);\n  border-radius: 2px;\n  padding: 10px 40px;\n}\n.card .card-action a:hover {\n  color: #bbddbb;\n  text-decoration: none;\n}\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -153,7 +159,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/house-details/house-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-side-bar></app-side-bar>\n\n<nav class=\"navbar custom-nav\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header col-sm-12\">\n        <p class=\"title\">HOUSE DETAILS</p>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"col-sm-5 col-centered\">\n      <div class=\"card\">\n          <div class=\"card-image\">\n              <img style=\"opacity: 0.80;\" class=\"img-responsive\" src=\"http://realamericandreamhomes.com/wp-content/uploads/2016/06/Model-Features-Lakes.jpg\">\n              <span class=\"card-title\">house.title</span>\n          </div>\n\n          <div class=\"card-content\">\n              <p>house.description</p>\n          </div>\n\n          <div class=\"card-action\">\n              <a href=\"#\">Edit</a>\n              <a href=\"#\">Disable</a>\n          </div>\n      </div>\n  </div>\n"
+module.exports = "<app-side-bar></app-side-bar>\n\n<nav class=\"navbar custom-nav\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header col-sm-12\">\n        <p class=\"title\">HOUSE DETAILS</p>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"col-sm-5 col-centered\">\n      <div class=\"card\">\n          <div class=\"card-image\">\n              <img style=\"opacity: 0.80;\" class=\"img-responsive\" src=\"http://realamericandreamhomes.com/wp-content/uploads/2016/06/Model-Features-Lakes.jpg\">\n              <span class=\"card-title\">house.title</span>\n          </div>\n\n          <div class=\"card-content\">\n              <p>house.description</p>\n          </div>\n\n          <div class=\"card-action\">\n              <a class=\"button-dark\" href=\"#\">Edit</a>\n              <a class=\"button-dark\" href=\"#\">Disable</a>\n          </div>\n      </div>\n  </div>\n"
 
 /***/ }),
 
@@ -254,6 +260,128 @@ var LogInComponent = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/new-service/new-service.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/new-service/new-service.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-side-bar></app-side-bar>\n\n<nav class=\"navbar custom-nav\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header col-sm-12\">\n        <p class=\"title\">ADD SERVICE</p>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"col-sm-5 col-centered\">\n      <div class=\"card\">\n          <div class=\"group\">\n              <input type=\"text\" required>\n              <span class=\"highlight\"></span>\n              <span class=\"bar\"></span>\n              <label>Service Name</label>\n          </div>\n          <p style=\"color:#878787\">Icon</p>\n          <div class=\"grid col-centered\">\n              <div class=\"container-fluid\">\n                  <div class=\"row\">\n                   <div class=\"col-xs-4\">\n                      <button type=\"button\" class=\"btn btn-primary service-toggle\" data-toggle=\"button\" aria-pressed=\"false\" autocomplete=\"off\">\n                          <img src=\"../assets/svg/serviceRent.svg\" style=\"color:#FFF\">\n                      </button>\n                   </div>\n                   <div class=\"col-xs-4\">\n                      <button type=\"button\" class=\"btn btn-primary service-toggle\" data-toggle=\"button\" aria-pressed=\"false\" autocomplete=\"off\">\n                          <img src=\"../assets/svg/serviceElectricity.svg\" style=\"color:#FFF\">\n                      </button>\n                   </div>\n                   <div class=\"col-xs-4\">\n                      <button type=\"button\" class=\"btn btn-primary service-toggle\" data-toggle=\"button\" aria-pressed=\"false\" autocomplete=\"off\">\n                          <img src=\"../assets/svg/serviceInternet.svg\" style=\"color:#FFF\">\n                      </button>\n                   </div>\n                  </div>\n                  <div class=\"row\">\n                      <div class=\"col-xs-4\">\n                         <button type=\"button\" class=\"btn btn-primary service-toggle\" data-toggle=\"button\" aria-pressed=\"false\" autocomplete=\"off\">\n                             <img src=\"../assets/svg/servicePhone.svg\" style=\"color:#FFF\">\n                         </button>\n                      </div>\n                      <div class=\"col-xs-4\">\n                         <button type=\"button\" class=\"btn btn-primary service-toggle\" data-toggle=\"button\" aria-pressed=\"false\" autocomplete=\"off\">\n                             <img src=\"../assets/svg/serviceCable.svg\" style=\"color:#FFF\">\n                         </button>\n                      </div>\n                      <div class=\"col-xs-4\">\n                         <button type=\"button\" class=\"btn btn-primary service-toggle\" data-toggle=\"button\" aria-pressed=\"false\" autocomplete=\"off\">\n                             <img src=\"../assets/svg/serviceWater.svg\" style=\"color:#FFF\">\n                         </button>\n                      </div>\n                     </div>\n                     <div class=\"row\">\n                        <div class=\"col-xs-4\">\n                           <button type=\"button\" class=\"btn btn-primary service-toggle\" data-toggle=\"button\" aria-pressed=\"false\" autocomplete=\"off\">\n                               <img src=\"../assets/svg/serviceGas.svg\" style=\"color:#FFF\">\n                           </button>\n                        </div>\n                        <div class=\"col-xs-4\">\n                           <button type=\"button\" class=\"btn btn-primary service-toggle\" data-toggle=\"button\" aria-pressed=\"false\" autocomplete=\"off\">\n                               <img src=\"../assets/svg/serviceCleaning.svg\" style=\"color:#FFF\">\n                           </button>\n                        </div>\n                        <div class=\"col-xs-4\">\n                           <button type=\"button\" class=\"btn btn-primary service-toggle\" data-toggle=\"button\" aria-pressed=\"false\" autocomplete=\"off\">\n                               <img src=\"../assets/svg/serviceOthers.svg\" style=\"color:#FFF\">\n                           </button>\n                        </div>\n                       </div>\n                </div>\n          </div>\n\n          <div class=\"group\">\n              <input type=\"text\" required>\n              <span class=\"highlight\"></span>\n              <span class=\"bar\"></span>\n              <label>Cost</label>\n          </div>\n          <div class=\"group\">\n              <input type=\"text\" required>\n              <span class=\"highlight\"></span>\n              <span class=\"bar\"></span>\n              <label style=\"float:left;\">Payment Due</label>\n              <span style=\"color:black\">/ of every month</span>\n          </div>\n\n          <a href=\"#\" class=\"button-dark\" routerLink=\"/services\">Cancel</a>\n          <a href=\"#\" class=\"button-dark\">Save</a>\n      </div>\n  </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/new-service/new-service.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewServiceComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NewServiceComponent = (function () {
+    function NewServiceComponent() {
+    }
+    NewServiceComponent.prototype.ngOnInit = function () {
+    };
+    NewServiceComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-new-service',
+            template: __webpack_require__("../../../../../src/app/new-service/new-service.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/new-service/new-service.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], NewServiceComponent);
+    return NewServiceComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/roomies/roomies.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/roomies/roomies.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-side-bar></app-side-bar>\n\n<nav class=\"navbar custom-nav\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header col-sm-12\">\n        <p class=\"title\">ROOMIES</p>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"container\">\n      <div class=\"row\">\n          <div class=\"col-md-5 col-centered\">\n              <ul class=\"list-group custom-list\">\n                <!-- TODO SERVICE LIST COMPONENT -->\n                  <li class=\"list-group-item\" style=\"padding:10px 15px;\">\n                    <div class=\"media\">\n                      <div class=\"media-left media-middle\">\n                          <img class=\"media-object\" src=\"../assets/svg/defaultUser.svg\" alt=\"...\">\n                      </div>\n                      <div class=\"media-body\">\n                        <h5 class=\"media-heading\">Israel Garcia</h5>\n                        <p style=\"color: #878787\">Roomie Owner</p>\n                      </div>\n                    </div>\n                  </li>\n                  <li class=\"list-group-item\" style=\"padding:10px 15px;\">\n                      <div class=\"media\">\n                        <div class=\"media-left media-middle\">\n                            <img class=\"media-object\" src=\"../assets/svg/defaultUser.svg\" alt=\"...\">\n                        </div>\n                        <div class=\"media-body\">\n                          <h5 class=\"media-heading\">David Diaz</h5>\n                          <p style=\"color: #878787\">Roomie</p>\n                        </div>\n                      </div>\n                    </li>\n                <!-- TODO SERVICE LIST COMPONENT -->\n              </ul>\n          </div>\n      </div>\n    </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/roomies/roomies.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoomiesComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var RoomiesComponent = (function () {
+    function RoomiesComponent() {
+    }
+    RoomiesComponent.prototype.ngOnInit = function () {
+    };
+    RoomiesComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-roomies',
+            template: __webpack_require__("../../../../../src/app/roomies/roomies.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/roomies/roomies.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], RoomiesComponent);
+    return RoomiesComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/routes.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -263,6 +391,10 @@ var LogInComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sign_up_sign_up_component__ = __webpack_require__("../../../../../src/app/sign-up/sign-up.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__house_details_house_details_component__ = __webpack_require__("../../../../../src/app/house-details/house-details.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_services_component__ = __webpack_require__("../../../../../src/app/services/services.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__new_service_new_service_component__ = __webpack_require__("../../../../../src/app/new-service/new-service.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__roomies_roomies_component__ = __webpack_require__("../../../../../src/app/roomies/roomies.component.ts");
+
+
 
 
 
@@ -272,6 +404,8 @@ var appRoutes = [
     { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_1__sign_up_sign_up_component__["a" /* SignUpComponent */] },
     { path: 'details', component: __WEBPACK_IMPORTED_MODULE_2__house_details_house_details_component__["a" /* HouseDetailsComponent */] },
     { path: 'services', component: __WEBPACK_IMPORTED_MODULE_3__services_services_component__["a" /* ServicesComponent */] },
+    { path: 'newService', component: __WEBPACK_IMPORTED_MODULE_4__new_service_new_service_component__["a" /* NewServiceComponent */] },
+    { path: 'roomies', component: __WEBPACK_IMPORTED_MODULE_5__roomies_roomies_component__["a" /* RoomiesComponent */] },
     { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
@@ -299,7 +433,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/services/services.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-side-bar></app-side-bar>\n\n<nav class=\"navbar custom-nav-fat\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header col-sm-12\">\n        <p class=\"title\">SERVICES</p>\n      </div>\n    </div>\n    <div class=\"navbar-header col-sm-12 text-center\">\n      <h2 class=\"\">$ 453.53</h2>\n      <a class=\"filter-services\">All</a>\n     </div>\n</nav>\n\n<a class=\"btn-add\"><span class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\"></span></a>\n\n\n<div class=\"container\">\n  <div class=\"row\">\n      <div class=\"col-md-5 col-centered\">\n          <ul class=\"list-group custom-list\">\n            <!-- TODO SERVICE LIST COMPONENT -->\n              <li class=\"list-group-item\" style=\"padding:10px 15px;\">\n                <div class=\"media\">\n                  <div class=\"media-left media-middle\">\n                      <img class=\"media-object\" src=\"../assets/svg/serviceRent.svg\" alt=\"...\">\n                  </div>\n                  <div class=\"media-body\">\n                    <h5 class=\"media-heading\">Rent</h5>\n                    <p style=\"color: #878787\">$500.00</p>\n                  </div>\n                </div>\n              </li>\n            <!-- TODO SERVICE LIST COMPONENT -->\n          </ul>\n      </div>\n  </div>\n</div>\n"
+module.exports = "<app-side-bar></app-side-bar>\n\n<nav class=\"navbar custom-nav-fat\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header col-sm-12\">\n        <p class=\"title\">SERVICES</p>\n      </div>\n    </div>\n    <div class=\"navbar-header col-sm-12 text-center\">\n      <h2 class=\"\">$ 453.53</h2>\n      <a class=\"filter-services\">All</a>\n     </div>\n</nav>\n\n<a routerLink=\"/newService\" class=\"btn-add\"><span class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\"></span></a>\n\n\n<div class=\"container\">\n  <div class=\"row\">\n      <div class=\"col-md-5 col-centered\">\n          <ul class=\"list-group custom-list\">\n            <!-- TODO SERVICE LIST COMPONENT -->\n              <li class=\"list-group-item\" style=\"padding:10px 15px;\">\n                <div class=\"media\">\n                  <div class=\"media-left media-middle\">\n                      <img class=\"media-object\" src=\"../assets/svg/serviceRent.svg\" alt=\"...\">\n                  </div>\n                  <div class=\"media-body\">\n                    <h5 class=\"media-heading\">Rent</h5>\n                    <p style=\"color: #878787\">$500.00</p>\n                  </div>\n                </div>\n              </li>\n            <!-- TODO SERVICE LIST COMPONENT -->\n          </ul>\n      </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -360,7 +494,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/side-bar/side-bar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"wrapper\">\n\n            <!-- Sidebar -->\n            <div id=\"sidebar-wrapper\">\n                <ul class=\"sidebar-nav\">\n                    <li class=\"sidebar-brand\">\n                        <a id=\"menu-toggle\" (click)=\"toggleMenu()\" style=\"cursor: pointer\">\n                            <span class=\"glyphicon glyphicon-menu-hamburger\" aria-hidden=\"true\"></span>\n                            <span class=\"user-item\">MENU</span>\n                        </a>\n                    </li>\n                    <li id=\"sidebar-user\">\n                      <img src=\"../assets/svg/defaultUser.svg\">\n                      <h3>Username</h3>\n                    </li>\n                    <li>\n                        <a routerLink=\"/details\"><span class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></span>  <span class=\"user-item\">House</span></a>\n                    </li>\n                    <li>\n                        <a routerLink=\"/services\"><span class=\"glyphicon glyphicon-wrench\" aria-hidden=\"true\"></span>  <span class=\"user-item\">Services</span></a>\n                    </li>\n                    <li>\n                        <a><span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span>  <span class=\"user-item\">Roomies</span></a>\n                    </li>\n                    <li>\n                        <a><span class=\"glyphicon glyphicon-log-out\" aria-hidden=\"true\"></span>  <span class=\"user-item\">Logout</span></a>\n                    </li>\n                </ul>\n            </div>\n            <!-- /#sidebar-wrapper -->\n</div>\n"
+module.exports = "<div id=\"wrapper\">\n\n            <!-- Sidebar -->\n            <div id=\"sidebar-wrapper\">\n                <ul class=\"sidebar-nav\">\n                    <li class=\"sidebar-brand\">\n                        <a id=\"menu-toggle\" (click)=\"toggleMenu()\" style=\"cursor: pointer\">\n                            <span class=\"glyphicon glyphicon-menu-hamburger\" aria-hidden=\"true\"></span>\n                            <span class=\"user-item\">MENU</span>\n                        </a>\n                    </li>\n                    <li id=\"sidebar-user\">\n                      <img src=\"../assets/svg/defaultUser.svg\">\n                      <h3>Username</h3>\n                    </li>\n                    <li>\n                        <a routerLink=\"/details\"><span class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></span>  <span class=\"user-item\">House</span></a>\n                    </li>\n                    <li>\n                        <a routerLink=\"/services\"><span class=\"glyphicon glyphicon-wrench\" aria-hidden=\"true\"></span>  <span class=\"user-item\">Services</span></a>\n                    </li>\n                    <li>\n                        <a routerLink=\"/roomies\"><span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span>  <span class=\"user-item\">Roomies</span></a>\n                    </li>\n                    <li>\n                        <a><span class=\"glyphicon glyphicon-log-out\" aria-hidden=\"true\"></span>  <span class=\"user-item\">Logout</span></a>\n                    </li>\n                </ul>\n            </div>\n            <!-- /#sidebar-wrapper -->\n</div>\n"
 
 /***/ }),
 
