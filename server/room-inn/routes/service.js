@@ -29,7 +29,7 @@ router.get('/:id',function(req, res, next){
 
 router.get('/byHouse/:id',function(req, res, next){
     let houseId=req.params.id;
-    models.Service.findAll({where:{house_id:houseId}}).then(function(resp){
+    models.Service.findAll({where:{house_id:houseId,status:!0}}).then(function(resp){
         models.Roomie.findAll({where:{house_id:houseId}}).then(function(roomies){
             response=resp.map(function(item){
                 if(roomies)
@@ -39,13 +39,16 @@ router.get('/byHouse/:id',function(req, res, next){
                 return item;
             });
             res.status(200).send(response);
-        })
+        }).catch(function(err){
+            res.status(400).send({err:err.message});
+        });
     });
 });
 
 router.post('/',function(req, res, next){
     let params = req.parameters;
-    let serviceParams = params.require('service').permit('name','icon','cost','payment_due','house_id').value();
+    let serviceParams = params.require('service').permit('name','icon','cost','payment_due','house_id','status').value();
+    serviceParams.status=true;
     models.Service.create(serviceParams).then(function(resp){
         res.status(201).send({service:resp});
     }).catch(function(err){
@@ -67,5 +70,18 @@ router.put('/:id',function(req, res, next){
         });
     });
 });
+
+//TODO: TEST
+router.delete('/:id',function(req, res, next){
+    let serviceId=req.params.id;
+    models.Service.findOne({where:{id:serviceId}}).then(function(service){
+        if(!service){res.status(404).send({error:'Service not found'})}
+        models.Service.update({'status':false},{where:{id:serviceId}}).then(function(updatedService){
+            res.status(201).send({service:updatedService});
+        }).catch(function(err){
+            res.status(400).send({err:err.message});
+        });
+    });
+})
 
 module.exports = router;
