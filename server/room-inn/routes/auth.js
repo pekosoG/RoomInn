@@ -36,7 +36,7 @@ function authenticate(req, res, next){
             expiresIn: 1440*10 // expires in 24 hours
         });
 
-        res.status(200).send({status:true,token:token});
+        res.status(200).send({status:true,token:token,roomie:roomie.id});
     });
 }
 module.exports = router;

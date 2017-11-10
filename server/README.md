@@ -303,7 +303,8 @@ POST
 RESPONSE: 200 OK
 {
  "status": true,
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlzcmFlbF9nYWhlQGhvdG1haWwuY29tIiwiaWQiOjEsImlhdCI6MTUxMDEyNTk3NSwiZXhwIjoxNTEwMTI3NDE1fQ.rj5tVWE52luoFvVItQqiVD19VwH7NuJ1fnq42_ddZq0"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlzcmFlbF9nYWhlQGhvdG1haWwuY29tIiwiaWQiOjEsImlhdCI6MTUxMDEyNTk3NSwiZXhwIjoxNTEwMTI3NDE1fQ.rj5tVWE52luoFvVItQqiVD19VwH7NuJ1fnq42_ddZq0",
+  "roomie":1
 }
 ```
 After this, you need to send the token at the body or as a query variable or even as a header with the __x-access-token__ key.
