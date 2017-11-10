@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     payment_due: DataTypes.INTEGER,
     house_id: DataTypes.INTEGER,
     register_date: DataTypes.DATE,
-    update_date: DataTypes.DATE
+    update_date: DataTypes.DATE,
+    status: DataTypes.BOOLEAN
   }, {
     classMethods: {
       associate: function(models) {
