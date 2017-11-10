@@ -1,6 +1,8 @@
 package mx.devf.roominn.Activities
 
+import android.Manifest
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -15,7 +17,9 @@ import com.afollestad.materialdialogs.MaterialDialog
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import mx.devf.roominn.R
 import android.content.DialogInterface
+import android.content.pm.PackageManager
 import android.inputmethodservice.KeyboardView
+import android.support.v13.app.ActivityCompat
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_login.*
 import mx.devf.roominn.API.RoomInnService
@@ -40,6 +44,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<RoomI
 
         btnSignUp?.setOnClickListener(this)
         btnImagen?.setOnClickListener(this)
+        setupServices()
     }
 
     override fun onClick(p0: View?) {
@@ -55,7 +60,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<RoomI
     }
 
 
-    fun signUp(){
+    private fun signUp(){
         val roomie = validate()
         if(roomie != null) {
             content?.visibility = View.INVISIBLE
@@ -73,7 +78,8 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<RoomI
 
             val body = response?.body()
             Log.e("myLog", "success insert - $body.id")
-            Settings.saveEmail(this, body!!.roomie.email)
+            //Settings.saveEmail(this, body!!.roomie.email)
+            //sendLogin()
             onBackPressed()
         }
         else {
@@ -104,7 +110,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<RoomI
         val phone = etPhone?.text.toString().trim()
 
         if(fullname == "") {
-            Snackbar.make(etFullname, "Email required", Snackbar.LENGTH_LONG)
+            Snackbar.make(etFullname, "Name required", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
             return null
         }
@@ -119,7 +125,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<RoomI
             return null
         }
         if(phone == "") {
-            Snackbar.make(etEmail, "Password required", Snackbar.LENGTH_LONG)
+            Snackbar.make(etEmail, "phone required", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
             return null
         }
@@ -154,10 +160,21 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, Callback<RoomI
         startActivityForResult(camaraIntent, 1032) //codigo que asigne a mi camara
     }
 
+
     fun findPicture()
     {
         val pickPhoto = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(pickPhoto, 1234)//one can be replaced with any action code
+    }
+
+
+    private fun sendLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NO_HISTORY;
+        //intent.putExtra(Constants.INTENT_KEY_USERNAME, username)
+        startActivity(intent)
+        finish()
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

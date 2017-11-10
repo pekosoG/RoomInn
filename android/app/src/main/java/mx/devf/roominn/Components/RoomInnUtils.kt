@@ -7,8 +7,8 @@ import android.util.Base64
 import java.io.ByteArrayOutputStream
 import android.provider.MediaStore.Images.Media.getBitmap
 import android.graphics.drawable.BitmapDrawable
-
-
+import android.graphics.BitmapFactory
+import mx.devf.roominn.R
 
 
 /**
@@ -30,4 +30,50 @@ object RoomInnUtils {
             return ""
     }
 
+    fun toBitmap(encodedImage: String) : Bitmap?
+    {
+        if(encodedImage == "")
+            return null
+        try {
+            var decodedString = Base64.decode(encodedImage, Base64.DEFAULT)
+            return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
+
+        }catch(ex:Exception){
+            return null
+        }
+    }
+
+    fun toDrawerRadioService(item : String) : Int
+    {
+        return when(item)
+        {
+            "Rent" -> R.drawable.ic_servicerent
+            "Electricity" -> R.drawable.ic_serviceelectricity
+            "Water" -> R.drawable.ic_servicewater
+            "Internet" -> R.drawable.ic_serviceinternet
+            "Gas" -> R.drawable.ic_servicegas
+            "Cable" -> R.drawable.ic_servicecable
+            "Phone"  -> R.drawable.ic_servicephone
+            "Cleaning" -> R.drawable.ic_servicecleaning
+            else -> R.drawable.ic_serviceothers
+
+        }
+    }
+
+    fun toStringRadioService(itemId : Int) : String
+    {
+        return when(itemId)
+        {
+            R.id.radioRent -> "Rent"
+            R.id.radioElectricity -> "Electricity"
+            R.id.radioWater -> "Water"
+            R.id.radioInternet -> "Internet"
+            R.id.radioGas -> "Gas"
+            R.id.radioCable -> "Cable"
+            R.id.radioPhone -> "Phone"
+            R.id.radioCleaning -> "Cleaning"
+            R.id.radioOthers -> "Others"
+            else -> ""
+        }
+    }
 }

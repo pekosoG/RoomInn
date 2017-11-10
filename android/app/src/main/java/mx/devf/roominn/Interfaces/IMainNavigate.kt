@@ -11,6 +11,8 @@ interface IMainNavigate
     fun navigate(fragment : Fragment)
     fun navigate(fragment : Fragment, tag :String)
     fun logout()
+    fun showLoading()
+    fun hideLoading()
 
     val service: RoomInnService?
 
